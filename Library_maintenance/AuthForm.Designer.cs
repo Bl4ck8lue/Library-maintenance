@@ -34,8 +34,9 @@
             passLabel = new Label();
             loginTextBox = new TextBox();
             passTextBox = new TextBox();
-            enterButton = new Button();
-            button1 = new Button();
+            closeButton = new Button();
+            entbutton = new Button();
+            resultsTextBox = new TextBox();
             SuspendLayout();
             // 
             // titleLabel
@@ -84,40 +85,51 @@
             passTextBox.Size = new Size(197, 29);
             passTextBox.TabIndex = 4;
             // 
-            // enterButton
+            // closeButton
             // 
-            enterButton.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            enterButton.Location = new Point(137, 286);
-            enterButton.Name = "enterButton";
-            enterButton.Size = new Size(75, 31);
-            enterButton.TabIndex = 5;
-            enterButton.Text = "Войти";
-            enterButton.UseVisualStyleBackColor = true;
+            closeButton.Image = (Image)resources.GetObject("closeButton.Image");
+            closeButton.Location = new Point(305, 12);
+            closeButton.Name = "closeButton";
+            closeButton.Size = new Size(29, 23);
+            closeButton.TabIndex = 0;
+            closeButton.Click += closeButton_Click;
             // 
-            // button1
+            // entbutton
             // 
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(306, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(28, 23);
-            button1.TabIndex = 6;
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            entbutton.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            entbutton.Location = new Point(142, 299);
+            entbutton.Name = "entbutton";
+            entbutton.Size = new Size(75, 27);
+            entbutton.TabIndex = 5;
+            entbutton.Text = "Войти";
+            entbutton.UseVisualStyleBackColor = true;
+            entbutton.Click += entbutton_Click;
             // 
-            // Form1
+            // resultsTextBox
+            // 
+            resultsTextBox.Location = new Point(371, 41);
+            resultsTextBox.Multiline = true;
+            resultsTextBox.Name = "resultsTextBox";
+            resultsTextBox.Size = new Size(292, 248);
+            resultsTextBox.TabIndex = 6;
+            // 
+            // AuthForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(346, 353);
-            Controls.Add(button1);
-            Controls.Add(enterButton);
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            ClientSize = new Size(675, 363);
+            Controls.Add(resultsTextBox);
+            Controls.Add(entbutton);
+            Controls.Add(closeButton);
             Controls.Add(passTextBox);
             Controls.Add(loginTextBox);
             Controls.Add(passLabel);
             Controls.Add(loginLabel);
             Controls.Add(titleLabel);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Form1";
+            Name = "AuthForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             ResumeLayout(false);
             PerformLayout();
@@ -131,6 +143,8 @@
         private TextBox loginTextBox;
         private TextBox passTextBox;
         private Button enterButton;
-        private Button button1;
+        private Button closeButton;
+        private Button entbutton;
+        private TextBox resultsTextBox;
     }
 }
